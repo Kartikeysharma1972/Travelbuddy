@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TravelBuddy - Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f8ff;
+        }
+        .hero-section {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://source.unsplash.com/random/1200x800/?travel');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+            margin-bottom: 30px;
+        }
+        .feature-card {
+            transition: transform 0.3s;
+            margin-bottom: 20px;
+        }
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="/">TravelBuddy</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    {% if logged_in %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="/chat">Chat</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/logout">Logout</a>
+                    </li>
+                    <li class="nav-item">
+                        <span class="nav-link text-light">Welcome, {{ user_name }}!</span>
+                    </li>
+                    {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="/login">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/signup">Sign Up</a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <div class="container mt-3">
+                {% for message in messages %}
+                    <div class="alert alert-info alert-dismissible fade show">
+                        {{ message }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
+
+    <div class="hero-section text-center">
+        <div class="container">
+            <h1 class="display-3">Discover Your Perfect Getaway</h1>
+            <p class="lead">Get personalized travel recommendations based on your preferences and budget</p>
+            {% if not logged_in %}
+            <div class="mt-4">
+                <a href="/signup" class="btn btn-primary btn-lg me-2">Sign Up</a>
+                <a href="/login" class="btn btn-outline-light btn-lg">Login</a>
+            </div>
+            {% else %}
+            <div class="mt-4">
+                <a href="/chat" class="btn btn-primary btn-lg">Start Planning Your Trip</a>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="container mb-5">
+        <div class="row text-center mb-5">
+            <div class="col-12">
+                <h2>How It Works</h2>
+                <p class="lead text-muted">Simple steps to plan your perfect vacation</p>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card feature-card h-100 shadow">
+                    <div class="card-body text-center p-4">
+                        <div class="mb-4 text-primary">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" class="bi bi-person-plus" viewBox="0 0 16 16">
+                                <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H1s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C9.516 10.68 8.289 10 6 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
+                                <path fill-rule="evenodd" d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z"/>
+                            </svg>
+                        </div>
+                        <h3 class="card-title">Create an Account</h3>
+                        <p class="card-text">Sign up with your details so we can personalize your experience.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="card feature-card h-100 shadow">
+                    <div class="card-body text-center p-4">
+                        <div class="mb-4 text-primary">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" class="bi bi-chat-dots" viewBox="0 0 16 16">
+                                <path d="M5 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+                                <path d="m2.165 15.803.02-.004c1.83-.363 2.948-.842 3.468-1.105A9.06 9.06 0 0 0 8 15c4.418 0 8-3.134 8-7s-3.582-7-8-7-8 3.134-8 7c0 1.76.743 3.37 1.97 4.6a10.437 10.437 0 0 1-.524 2.318l-.003.011a10.722 10.722 0 0 1-.244.637c-.079.186.074.394.273.362a21.673 21.673 0 0 0 .693-.125zm.8-3.108a1 1 0 0 0-.287-.801C1.618 10.83 1 9.468 1 8c0-3.192 3.004-6 7-6s7 2.808 7 6c0 3.193-3.004 6-7 6a8.06 8.06 0 0 1-2.088-.272 1 1 0 0 0-.711.074c-.387.196-1.24.57-2.634.893a10.97 10.97 0 0 0 .398-2z"/>
+                            </svg>
+                        </div>
+                        <h3 class="card-title">Chat with Our AI</h3>
+                        <p class="card-text">Tell us about the trip you want to plan and where you want to go.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="card feature-card h-100 shadow">
+                    <div class="card-body text-center p-4">
+                        <div class="mb-4 text-primary">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" class="bi bi-globe" viewBox="0 0 16 16">
+                                <path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm7.5-6.923c-.67.204-1.335.82-1.887 1.855A7.97 7.97 0 0 0 5.145 4H7.5V1.077zM4.09 4a9.267 9.267 0 0 1 .64-1.539 6.7 6.7 0 0 1 .597-.933A7.025 7.025 0 0 0 2.255 4H4.09zm-.582 3.5c.03-.877.138-1.718.312-2.5H1.674a6.958 6.958 0 0 0-.656 2.5h2.49zM4.847 5a12.5 12.5 0 0 0-.338 2.5H7.5V5H4.847zM8.5 5v2.5h2.99a12.495 12.495 0 0 0-.337-2.5H8.5zM4.51 8.5a12.5 12.5 0 0 0 .337 2.5H7.5V8.5H4.51zm3.99 0V11h2.653c.187-.765.306-1.608.338-2.5H8.5zM5.145 12c.138.386.295.744.468 1.068.552 1.035 1.218 1.65 1.887 1.855V12H5.145zm.182 2.472a6.696 6.696 0 0 1-.597-.933A9.268 9.268 0 0 1 4.09 12H2.255a7.024 7.024 0 0 0 3.072 2.472zM3.82 11a13.652 13.652 0 0 1-.312-2.5h-2.49c.062.89.291 1.733.656 2.5H3.82zm6.853 3.472A7.024 7.024 0 0 0 13.745 12H11.91a9.27 9.27 0 0 1-.64 1.539 6.688 6.688 0 0 1-.597.933zM8.5 12v2.923c.67-.204 1.335-.82 1.887-1.855.173-.324.33-.682.468-1.068H8.5zm3.68-1h2.146c.365-.767.594-1.61.656-2.5h-2.49a13.65 13.65 0 0 1-.312 2.5zm2.802-3.5a6.959 6.959 0 0 0-.656-2.5H12.18c.174.782.282 1.623.312 2.5h2.49zM11.27 2.461c.247.464.462.98.64 1.539h1.835a7.024 7.024 0 0 0-3.072-2.472c.218.284.418.598.597.933zM10.855 4a7.966 7.966 0 0 0-.468-1.068C9.835 1.897 9.17 1.282 8.5 1.077V4h2.355z"/>
+                            </svg>
+                        </div>
+                        <h3 class="card-title">Get Personalized Packages</h3>
+                        <p class="card-text">Receive tailored travel packages based on your budget and preferences.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white py-4">
+        <div class="container text-center">
+            <p>© 2025 TravelBuddy. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
