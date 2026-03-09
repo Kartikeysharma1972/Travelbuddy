@@ -34,7 +34,10 @@ A smart AI-powered travel planning assistant that helps users discover destinati
 - 💬 **Hindi/Hinglish Support** - "Hotel dikhao", "Khane ka kya hai"
 - 🔗 **Direct Booking** - Links to Booking.com, Zomato, Google Maps
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 3681c442669d59b9b4438aceda57eb007753dfe5
 
 ## ⚡ Performance
 
@@ -62,6 +65,21 @@ The bot understands multiple languages and styles:
 - "Kerala"
 
 
+<<<<<<< HEAD
+=======
+
+
+
+## 🛠️ Technologies Used
+
+- **Backend**: Flask (Python)
+- **Frontend**: HTML, CSS, Bootstrap, JavaScript
+- **AI Models**: 
+  - GROQ (Llama 3.1) - Ultra fast
+  - Google Gemini 1.5 Flash - High quality
+  - Mistral 7B (OpenRouter) - Backup
+- **Storage**: JSON (chat history), CSV (user data)
+>>>>>>> 3681c442669d59b9b4438aceda57eb007753dfe5
 
 ## 📱 Features in Detail
 
