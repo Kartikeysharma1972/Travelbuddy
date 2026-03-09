@@ -1,0 +1,43 @@
+# Environment files
+.env
+
+# Python cache files
+__pycache__/
+*.pyc
+*.pyo
+
+# Logs and temporary files
+*.log
+*.tmp
+
+# IDE settings
+.vscode/
+.idea/
+
+# System files
+Thumbs.db
+.DS_Store
+
+# Markdown documentation
+FEATURE_1_VOICE_COMPLETE.md
+FEATURE_IMPLEMENTATION_ROADMAP.md
+IMPLEMENTATION_COMPLETE.md
+IMPROVEMENTS_DONE.md
+IMPROVEMENTS_SUMMARY.md
+IMPROVEMENTS_V3.md
+INVESTOR_PITCH_VIDEO_SCRIPT.md
+LAUNCH_READY_ENHANCEMENTS.md
+LOCATION_ACCURACY_FIXES.md
+QUICK_START_REAL_DATA.md
+REAL_LOCAL_HUMAN_IMPROVEMENTS.md
+REALTIME_EXAMPLES.md
+REALTIME_GUIDE_SETUP.md
+
+
+# Other unnecessary files
+update4.txt
+chat_sessions.json (if dynamically generated)
+
+# Include additional markdown files to ignore
+API_SETUP_GUIDE.md
+GOOGLE_PLACES_API_SETUP.md

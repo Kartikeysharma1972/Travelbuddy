@@ -1,0 +1,12 @@
+Flask
+pandas
+requests
+Werkzeug
+beautifulsoup4
+Faker
+python-dotenv
+gunicorn
+cachetools
+geopy
+flask-session
+python-dateutil
