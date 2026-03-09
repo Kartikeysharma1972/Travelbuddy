@@ -34,54 +34,7 @@ A smart AI-powered travel planning assistant that helps users discover destinati
 - 💬 **Hindi/Hinglish Support** - "Hotel dikhao", "Khane ka kya hai"
 - 🔗 **Direct Booking** - Links to Booking.com, Zomato, Google Maps
 
-### Quick Start:
-```
-1. Click "Real-Time Guide" button in chat
-2. Grant location permission
-3. Say: "hotels nearby" or "khane ka kya scene hai"
-4. Get real results with booking options!
-```
 
-📖 **See:** [QUICK_START_REAL_DATA.md](QUICK_START_REAL_DATA.md) for setup guide
-
-## 🎯 Quick Setup
-
-### 1. Install Dependencies
-```bash
-pip install -r requirements.txt
-```
-
-### 2. Setup API Keys (IMPORTANT!)
-
-Create a `.env` file in the project root:
-
-```env
-# Flask Secret Key
-SECRET_KEY=your_secret_key_here
-
-# AI APIs (Get FREE keys - see API_SETUP_GUIDE.md)
-GROQ_API_KEY=gsk_your_groq_key_here          # ⚡ FASTEST (recommended)
-GEMINI_API_KEY=your_gemini_key_here          # 🔥 Fast backup
-OPENROUTER_API_KEY=your_openrouter_key_here  # Backup
-
-# Search API (optional)
-SERPAPI_API_KEY=your_serpapi_key_here
-
-# Google Places API (for Real-Time Guide - optional)
-GOOGLE_PLACES_API_KEY=your_google_places_key_here
-```
-
-**📖 See [API_SETUP_GUIDE.md](API_SETUP_GUIDE.md) for detailed instructions on getting FREE API keys!**
-
-**🗺️ For Real-Time Guide with real data, see: [GOOGLE_PLACES_API_SETUP.md](GOOGLE_PLACES_API_SETUP.md)**
-
-### 3. Run the Application
-```bash
-python app.py
-```
-
-### 4. Open Browser
-Navigate to: `http://localhost:5000`
 
 ## ⚡ Performance
 
@@ -108,49 +61,7 @@ The bot understands multiple languages and styles:
 - "Dubai"
 - "Kerala"
 
-## 📁 Project Structure
 
-```
-travelbuddy/
-├── app.py                 # Flask application
-├── travel_assistant.py    # AI travel assistant logic
-├── templates/
-│   ├── chat.html         # Chat interface
-│   ├── home.html         # Home page
-│   ├── login.html        # Login page
-│   └── signup.html       # Signup page
-├── chat_sessions.json    # Chat history storage
-├── user_database.csv     # User database
-├── requirements.txt      # Python dependencies
-├── API_SETUP_GUIDE.md   # Detailed API setup guide
-└── .env                 # Environment variables (create this!)
-```
-
-## 🔑 Getting FREE API Keys
-
-### GROQ (Recommended - FASTEST!)
-1. Visit: https://console.groq.com/
-2. Sign up (free)
-3. Create API key
-4. Add to `.env` file
-
-### Google Gemini
-1. Visit: https://makersuite.google.com/app/apikey
-2. Sign in with Google
-3. Create API key
-4. Add to `.env` file
-
-**Full instructions in [API_SETUP_GUIDE.md](API_SETUP_GUIDE.md)**
-
-## 🛠️ Technologies Used
-
-- **Backend**: Flask (Python)
-- **Frontend**: HTML, CSS, Bootstrap, JavaScript
-- **AI Models**: 
-  - GROQ (Llama 3.1) - Ultra fast
-  - Google Gemini 1.5 Flash - High quality
-  - Mistral 7B (OpenRouter) - Backup
-- **Storage**: JSON (chat history), CSV (user data)
 
 ## 📱 Features in Detail
 
@@ -213,6 +124,5 @@ This project is open source and available under the MIT License.
 
 ---
 
-**Made with ❤️ for travelers everywhere**
-
-Need help? Check out [API_SETUP_GUIDE.md](API_SETUP_GUIDE.md) for detailed setup instructions!
+## LIVE DEMO 
+[https://travelbuddy-an5m.onrender.com]
