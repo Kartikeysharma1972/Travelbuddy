@@ -34,10 +34,7 @@ A smart AI-powered travel planning assistant that helps users discover destinati
 - 💬 **Hindi/Hinglish Support** - "Hotel dikhao", "Khane ka kya hai"
 - 🔗 **Direct Booking** - Links to Booking.com, Zomato, Google Maps
 
-<<<<<<< HEAD
 
-=======
->>>>>>> 3681c442669d59b9b4438aceda57eb007753dfe5
 
 ## ⚡ Performance
 
@@ -63,11 +60,6 @@ The bot understands multiple languages and styles:
 - "Shimla"
 - "Dubai"
 - "Kerala"
-
-
-<<<<<<< HEAD
-=======
-
 
 
 ## 🛠️ Technologies Used
@@ -105,18 +97,7 @@ The bot understands multiple languages and styles:
 - Automatic fallback to backup APIs
 - Always provides results (pre-written content as final fallback)
 
-## 🚀 Deployment
 
-### Docker (Included)
-```bash
-docker build -t travelbuddy .
-docker run -p 5000:5000 travelbuddy
-```
-
-### Heroku / Railway / Render
-1. Add environment variables in platform settings
-2. Deploy from GitHub repository
-3. Done!
 
 ## 📊 Performance Metrics
 
